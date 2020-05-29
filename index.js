@@ -3,9 +3,18 @@ import typeDefs from './schema';
 import resolvers from './resolvers';
 import models from './models';
 
+
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  tracing: true,
+  cors: '*',
+  context: {
+    models,
+    user: {
+      id: 1,
+    },
+  },
   playground: {
     endpoint: '/graphql',
     settings: {
@@ -14,11 +23,8 @@ const server = new ApolloServer({
   },
 });
 
-
-server.listen()
-  .then(({ url }) => {
-    models.sequelize.sync({ force: true })
-      .then(() => {
-        console.log(`🚀  Server ready at ${url}`);
-      });
+server.listen().then(({ url }) => {
+  models.sequelize.sync().then(() => {
+    console.log(`🚀  Server ready at ${url}`);
   });
+});
