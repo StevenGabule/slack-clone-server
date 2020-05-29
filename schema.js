@@ -34,8 +34,19 @@ type Query {
   hi: String
 }
 
+type Error {
+  path: String!
+  message: String
+}
+
+type RegisterResponse {
+  ok: Boolean!
+  user: User
+  errors: [Error!]
+}
+
 type Mutation {
-  register(username: String!, email: String!,password: String!): Boolean!
+  register(username: String!, email: String!,password: String!): RegisterResponse!
   createTeam(name: String!): Boolean!
   createChannel(teamId: Int!,name: String!, public: Boolean=false): Boolean!
   createMessage(channelId: Int!, text: String!): Boolean!

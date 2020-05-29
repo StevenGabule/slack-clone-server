@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41105297-a118-4650-8440-c7ce1e63a179" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/John_paul.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/John_paul.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/channel.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/channel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/message.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/message.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/team.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/team.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resolvers.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/schema.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resolvers.js" beforeDir="false" afterPath="$PROJECT_DIR$/resolvers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schema.js" beforeDir="false" afterPath="$PROJECT_DIR$/schema.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,13 +38,15 @@
     <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\NEXT-PROJECT\slack-clone-server" />
       <recent name="D:\NEXT-PROJECT\slack-clone-server\resolvers" />
       <recent name="D:\NEXT-PROJECT\slack-clone-server\schema" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\NEXT-PROJECT\slack-clone-server\resolvers" />
       <recent name="D:\NEXT-PROJECT\slack-clone-server\schema" />
     </key>
@@ -84,6 +78,7 @@
       <workItem from="1590750009210" duration="824000" />
       <workItem from="1590752564142" duration="879000" />
       <workItem from="1590753873526" duration="1465000" />
+      <workItem from="1590762704095" duration="3796000" />
     </task>
     <servers />
   </component>
