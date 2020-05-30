@@ -28,11 +28,6 @@ type Team {
   channels: [Channel!]!
 }
    
-type Query {
-  getUser(id: Int!): User!
-  allUsers: [User!]!
-  hi: String
-}
 
 type Error {
   path: String!
@@ -56,6 +51,13 @@ type CreateTeamResponse {
   ok: Boolean!
   errors: [Error!]
 }
+
+type Query {
+  getUser(id: Int!): User!
+  getCurrentUser: User
+  allUsers: [User!]!
+}
+
 
 type Mutation {
   register(username: String!, email: String!,password: String!): RegisterResponse!

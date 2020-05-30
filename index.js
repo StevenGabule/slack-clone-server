@@ -44,7 +44,7 @@ const server = new ApolloServer({
   context: ({ req }) => ({
     models,
     SECRET,
-    user: req.user,
+    currentUser: req.user,
     SECRET2,
   }),
   /* playground: {

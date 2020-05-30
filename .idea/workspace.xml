@@ -3,13 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="41105297-a118-4650-8440-c7ce1e63a179" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resolvers.js" beforeDir="false" afterPath="$PROJECT_DIR$/resolvers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/schema.js" beforeDir="false" afterPath="$PROJECT_DIR$/schema.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -102,7 +98,7 @@
       <workItem from="1590762704095" duration="3796000" />
       <workItem from="1590778199922" duration="1296000" />
       <workItem from="1590779653960" duration="14420000" />
-      <workItem from="1590839123224" duration="2984000" />
+      <workItem from="1590839123224" duration="8480000" />
     </task>
     <servers />
   </component>

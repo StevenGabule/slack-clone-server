@@ -1,9 +1,9 @@
-import ld from 'lodash';
+import lod from 'lodash';
 import { tryLogin } from './auth';
 
 const formatErrors = (e, models) => {
   if (e instanceof models.sequelize.ValidateError) {
-    return e.errors.map((x) => ld.pick(x, ['path', 'message']));
+    return e.errors.map((x) => lod.pick(x, ['path', 'message']));
   }
   return [{ path: 'name', message: 'something went wrong' }];
 };
@@ -12,7 +12,17 @@ export default {
   Query: {
     getUser: (_, { id }, { models }) => models.User.findOne({ where: { id } }),
     allUsers: (_, args, { models }) => models.User.findAll(),
-    hi: () => 'asdasd',
+    getCurrentUser: async (_, args, { models, currentUser }) => {
+      if (!currentUser) {
+        return null;
+      }
+      const user = await models.User.findOne({
+        where: {
+          username: currentUser.username,
+        },
+      });
+      return user;
+    },
   },
   Mutation: {
     register: async (_, args, { models }) => {
@@ -34,10 +44,9 @@ export default {
       tryLogin(email, password, models, SECRET, SECRET2)
     ),
 
-    createTeam: async (_, args, { models, user }) => {
+    createTeam: async (_, args, { models, currentUser }) => {
       try {
-        console.log('user: ', user);
-        await models.Team.create({ ...args, owner: user.id });
+        await models.Team.create({ ...args, owner: currentUser.id });
         return { ok: true };
       } catch (e) {
         return {
