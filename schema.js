@@ -45,9 +45,22 @@ type RegisterResponse {
   errors: [Error!]
 }
 
+type LoginResponse {
+  ok: Boolean!
+  token: String
+  refreshToken: String
+  errors: [Error!]
+}
+
+type CreateTeamResponse {
+  ok: Boolean!
+  errors: [Error!]
+}
+
 type Mutation {
   register(username: String!, email: String!,password: String!): RegisterResponse!
-  createTeam(name: String!): Boolean!
+  login(email: String!,password: String!): LoginResponse!
+  createTeam(name: String!): CreateTeamResponse!
   createChannel(teamId: Int!,name: String!, public: Boolean=false): Boolean!
   createMessage(channelId: Int!, text: String!): Boolean!
 }

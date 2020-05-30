@@ -1,5 +1,6 @@
-// eslint-disable-next-line import/prefer-default-export
-export const formatErr = (e, models) => {
+import _ from 'lodash';
+
+export default (e, models) => {
   if (e instanceof models.sequelize.ValidateError) {
     return e.errors.map((x) => _.pick(x, ['path', 'message']));
   }
