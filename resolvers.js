@@ -5,13 +5,25 @@ const formatErrors = (e, models) => {
   if (e instanceof models.sequelize.ValidateError) {
     return e.errors.map((x) => lod.pick(x, ['path', 'message']));
   }
-  return [{ path: 'name', message: 'something went wrong' }];
+  return [{
+    path: 'name',
+    message: 'something went wrong',
+  }];
 };
 
 export default {
   Query: {
     getUser: (_, { id }, { models }) => models.User.findOne({ where: { id } }),
+
     allUsers: (_, args, { models }) => models.User.findAll(),
+
+    allTeams: async (_, args, { models, currentUser }) => {
+      const userTeam = await models.Team.findAll({
+        where: { owner: currentUser.id },
+      }, { raw: true });
+      return userTeam;
+    },
+
     getCurrentUser: async (_, args, { models, currentUser }) => {
       if (!currentUser) {
         return null;
@@ -24,6 +36,7 @@ export default {
       return user;
     },
   },
+
   Mutation: {
     register: async (_, args, { models }) => {
       try {
@@ -46,7 +59,8 @@ export default {
 
     createTeam: async (_, args, { models, currentUser }) => {
       try {
-        await models.Team.create({ ...args, owner: currentUser.id });
+        const team = await models.Team.create({ ...args, owner: currentUser.id });
+        models.Channel.create({ name: 'general', public: true, teamId: team.id });
         return { ok: true };
       } catch (e) {
         return {
@@ -76,5 +90,8 @@ export default {
         return false;
       }
     },
+  },
+  Team: {
+    channels: ({ id }, args, { models }) => models.Channel.findAll({ where: { teamId: id } }),
   },
 };

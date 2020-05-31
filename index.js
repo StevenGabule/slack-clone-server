@@ -18,9 +18,7 @@ app.use(async (req, res, next) => {
   const token = req.headers.token;
   if (token) {
     try {
-      console.log(token);
       const { user } = await jwt.verify(token, SECRET);
-      console.log(user);
       req.user = user;
     } catch (e) {
       const refreshToken = req.headers['x-refresh-token'];

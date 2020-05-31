@@ -13,6 +13,7 @@ type Channel {
   public: Boolean!
   messages: [Message!]!
   user: [User!]!
+  teamId: Int!
 }
    
 type Message {
@@ -23,6 +24,8 @@ type Message {
 }
    
 type Team {
+  id: Int!
+  name: String!
   owner: User!
   members: [User!]!
   channels: [Channel!]!
@@ -56,6 +59,7 @@ type Query {
   getUser(id: Int!): User!
   getCurrentUser: User
   allUsers: [User!]!
+  allTeams: [Team!]!
 }
 
 
