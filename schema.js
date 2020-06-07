@@ -55,6 +55,12 @@ type CreateTeamResponse {
   errors: [Error!]
 }
 
+type CreateChannelResponse {
+  ok: Boolean!
+  channel: Channel
+  errors: [Error!]
+}
+
 type Query {
   getUser(id: Int!): User!
   getCurrentUser: User
@@ -67,7 +73,7 @@ type Mutation {
   register(username: String!, email: String!,password: String!): RegisterResponse!
   login(email: String!,password: String!): LoginResponse!
   createTeam(name: String!): CreateTeamResponse!
-  createChannel(teamId: Int!,name: String!, public: Boolean=false): Boolean!
+  createChannel(teamId: Int!,name: String!, public: Boolean=false): CreateChannelResponse!
   createMessage(channelId: Int!, text: String!): Boolean!
 }
 `;
